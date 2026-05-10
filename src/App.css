@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.8);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(244, 114, 182, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ec4899, #f43f5e);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #db2777, #e11d48);
+}
+
+/* Selection styling */
+::selection {
+  background-color: #ec4899;
+  color: white;
+}
+
+/* Button transitions */
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Input focus effects */
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* 3D Animations */
+@keyframes rotate-3d {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes float-rotate {
+  0% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotateX(10deg);
+  }
+  50% {
+    transform: translateY(-40px) rotateX(20deg);
+  }
+  75% {
+    transform: translateY(-20px) rotateX(10deg);
+  }
+  100% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3), inset 0 0 20px rgba(236, 72, 153, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(236, 72, 153, 0.8), inset 0 0 30px rgba(236, 72, 153, 0.2);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tilt-rotate {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(5deg) rotateY(10deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse-particle {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.animate-rotate-3d {
+  animation: rotate-3d 4s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.animate-flip {
+  animation: flip 2s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.animate-float-rotate {
+  animation: float-rotate 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+.animate-tilt-rotate {
+  animation: tilt-rotate 3s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+/* FIREWORKS ANIMATION - Enhanced Radial Burst */
+@keyframes firework-burst {
+  0% {
+    opacity: 1;
+    filter: blur(0px) brightness(1.2);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(1px) brightness(1);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(3px) brightness(0.5);
+  }
+}
+
+.firework-particle {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  margin-top: -8px;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform, opacity, filter;
+  animation: firework-burst var(--duration) ease-out forwards;
+}
+
+.firework-particle::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ff1493,
+    #ff69b4,
+    #ffc0cb
+  );
+  border-radius: 50%;
+  box-shadow:
+    0 0 16px rgba(255, 20, 147, 1),
+    0 0 32px rgba(255, 105, 180, 0.9),
+    0 0 48px rgba(255, 192, 203, 0.7);
+}
